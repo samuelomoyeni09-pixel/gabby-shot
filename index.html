@@ -368,9 +368,12 @@ footer{background:#020202;border-top:1px solid var(--bdr);padding:72px 68px 0}
   .tg{grid-template-columns:1fr 1fr}
   .ctg{grid-template-columns:1fr;gap:50px}
   .gg{columns:2}
-  #sdots{display:none}
-  .hphoto{width:72%}
-  .hcon{left:32px;max-width:520px}
+  #sdots,#cdot,#cring,#ctxt{display:none}
+  .hphoto{width:62%}
+  .hcon{left:32px;max-width:480px}
+  footer{padding:52px 32px 0}
+  .ft-top{grid-template-columns:1fr;gap:36px;padding-bottom:36px}
+  .ft-bot{flex-direction:column;text-align:center;gap:8px;padding:16px 0}
 }
 @media(max-width:768px){
   body{cursor:auto}
@@ -1240,7 +1243,7 @@ gsap.from('#atText > *',{
 });
 
 /* SERVICES — pin only on desktop, simple stagger on mobile */
-if(window.innerWidth > 768){
+if(window.innerWidth > 1024){
   gsap.set(['#svc1','#svc2','#svc3'],{ opacity:0, x:160, rotateY:45, transformOrigin:'left center' });
   const svcTL = gsap.timeline({
     scrollTrigger:{ trigger:'#services', pin:true, anticipatePin:1, start:'top top', end:'+=1000', scrub:1.4 }
@@ -1320,7 +1323,7 @@ if(aboutSec && ai3El){
 }
 
 /* VANILLA TILT — testimonials & stat cards only (no conflict with scrub) */
-if(window.innerWidth>768){
+if(window.innerWidth>1024){
   VanillaTilt.init(document.querySelectorAll('.hws'),{max:8,speed:600,perspective:1000,scale:1.02,gyroscope:false});
   VanillaTilt.init(document.querySelectorAll('.scard'),{max:12,speed:500,perspective:900,scale:1.04});
 }
